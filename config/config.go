@@ -10,6 +10,7 @@ import (
 
 type Config struct {
 	AppPort    string
+	AppEnv     string
 	DBHost     string
 	DBPort     string
 	DBUser     string
@@ -25,6 +26,7 @@ func Load() (*Config, error) {
 
 	cfg := &Config{
 		AppPort:    getEnv("APP_PORT", "3000"),
+		AppEnv:     getEnv("APP_ENV", "development"),
 		DBHost:     getEnv("DB_HOST", "localhost"),
 		DBPort:     getEnv("DB_PORT", "5433"),
 		DBUser:     getEnv("DB_USER", "postgres"),

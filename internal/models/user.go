@@ -1,12 +1,14 @@
 package models
 
+import "time"
+
 type CreateUserRequest struct {
-	Name string `json:"name" validate:"required"`
+	Name string `json:"name" validate:"required,min=2,max=100"`
 	Dob  string `json:"dob"  validate:"required"`
 }
 
 type UpdateUserRequest struct {
-	Name string `json:"name" validate:"required"`
+	Name string `json:"name" validate:"required,min=2,max=100"`
 	Dob  string `json:"dob"  validate:"required"`
 }
 
@@ -16,3 +18,5 @@ type UserResponse struct {
 	Dob  string `json:"dob"`
 	Age  int    `json:"age"`
 }
+
+var _ = time.Now
