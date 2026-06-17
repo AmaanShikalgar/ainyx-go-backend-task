@@ -161,5 +161,9 @@ func calculateAge(dob time.Time) int {
 		age--
 	}
 
+	if age < 0 {
+		return 0
+	}
+
 	return age
 }
