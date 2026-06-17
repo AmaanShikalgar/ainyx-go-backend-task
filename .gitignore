@@ -1,4 +1,5 @@
-.env
+
 bin/
 tmp/
 body.json
+.env
